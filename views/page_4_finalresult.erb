@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html
+  <head>
+
+    <title></title>
+  </head>
+  <body>
+    <h2><%=first_name%> Here are your teams</h2>
+    <%pairs.each do |final|%>
+    <%=final%><br>
+    <%end%>
+
+    <h2><%=first_name%> Here are your leftovers!!!!!</h2>
+    <%session[:leftovers].each do |final|%>
+    <%=final%><br>
+    <%end%>
+
+  </body>
+</html>

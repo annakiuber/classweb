@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title></title>
+</head>
+<!-- <br><%=namearray%></br> -->
+
+<form method= "post" action ="checkname">
+  <input type = "hidden" value="<%=namearray%>">
+  <input type = "hidden" name= "first_name" value="<%=first_name%>">
+  <!-- p <%=namearray%> -->
+  <%namearray.each do |pairs| %>
+<input type = "checkbox" name = "teams[]" value ='<%=pairs.join(',')%>'>
+    <%=pairs.join(', ')%><br>
+  <%end%>
+  <input type="submit" value="next">
+
+</body>
+</html>

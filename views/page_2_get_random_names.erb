@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<%=first_name%>
+<form method = "post" action ="/getrandomnames">
+  First name:<input type = "text" name= "name1">
+  second name:<input type = "text" name= "name2">
+  third name:<input type = "text" name= "name3">
+  fourth name:<input type = "text" name= "name4">
+  fifth name:<input type = "text" name= "name5">
+  sixth name:<input type = "text" name= "name6">
+  <input type = "hidden" name= "first_name" value="<%=first_name%>">
+  <input type="submit" value="makenamelist">
+</form>

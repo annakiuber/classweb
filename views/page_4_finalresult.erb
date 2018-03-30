@@ -5,15 +5,15 @@
     <title></title>
   </head>
   <body>
-    <h2><%=first_name%> Here are your teams</h2>
-    <%pairs.each do |final|%>
-    <%=final%><br>
-    <%end%>
+    <center><h2><%=first_name%> Here are your teams</h2>
+    <%session[:likedpairs].each do |final|%></br>
+    <%=final.join(',')%>
+    <%end%></center>
+    <center><form method= "post" action ="startover">
+    <input type = "submit" value="startover">
+    <p>smoking big doinks in amish</p>
+  </form></center></br>
 
-    <h2><%=first_name%> Here are your leftovers!!!!!</h2>
-    <%session[:leftovers].each do |final|%>
-    <%=final%><br>
-    <%end%>
 
   </body>
 </html>

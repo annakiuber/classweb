@@ -4,7 +4,26 @@
   <title></title>
 </head>
 <%=first_name%>
+<script>
+  function new_textbox(){
+    var input = document.createElement("input"); //var "input" <===input just name creates tag
+    var location = document.getElementById("our_input");
+    input.type = "text";
+    input.required = true;
+    input.autofocus = true;
+    input.name = "new_name[]"; //can put any name same as html formatting
+    location.appendChild(input); // adds input to location
+
+  }
+  function remove_box() {
+  var select = document.getElementById('our_input');
+  select.removeChild(select.lastChild);
+}
+</script>
+<button onclick="new_textbox()">Add a name :)</button>
+<button onclick="remove_box()">Delete your box</button> // removes last child at location
 <form method = "post" action ="/getrandomnames">
+  <p id="our_input"> </p>
   First name:<input type = "text" name= "name1">
   second name:<input type = "text" name= "name2">
   third name:<input type = "text" name= "name3">

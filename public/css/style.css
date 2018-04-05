@@ -1,0 +1,70 @@
+li {
+  color: red;
+  display: inline;
+  font-size: 2rem;
+  font-family:myfont;
+
+
+}
+ul{
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+li a {color: white;
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+#calendar {
+    font-family:myfont;
+    font-size: 100;
+
+}
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.name {
+  font-size: 5rem;
+  color: ccec6d;
+}
+.center {
+  text-align: center;
+  font-family: 'myfont';
+
+}
+footer {
+  margin-top: 500px;
+  margin-left: 1200px;
+
+}
+@font-face {
+   font-family: 'myfont';
+   src: url('img/the-font.ttf');
+}
+
+.font_type {
+   font-family: 'myfont';
+   color: ccec6d
+}
+
+body {
+  font-family: myfont
+  color: #ccec6d;
+}
+
+p {
+  font-family: "myfont";
+
+}
+p.center {
+    text-align: center;
+
+    color: red;
+}

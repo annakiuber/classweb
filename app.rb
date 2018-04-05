@@ -36,43 +36,47 @@ end
 
 post '/getrandomnames' do
 	first_name = params[:first_name]
-  name1 = params[:name1]
-	name2 = params[:name2]
-	name3 = params[:name3]
-	name4 = params[:name4]
-	name5 = params[:name5]
-	name6 = params[:name6]
-	array = [name1,name2,name3,name4,name5,name6]
-	"your names are #{name1}, #{name2}, #{name3}, #{name4}, #{name5}, #{name6}"
+	# params[:new_name]
+	array = params[:new_name]
+  # name1 = params[:name1]
+	# name2 = params[:name2]
+	# name3 = params[:name3]
+	# name4 = params[:name4]
+	# name5 = params[:name5]
+	# name6 = params[:name6]
+	# array = [name1,name2,name3,name4,name5,name6]
+	# "your names are #{name1}, #{name2}, #{name3}, #{name4}, #{name5}, #{name6}"
 	session[:namearray] = annas_pairing_app(array)
 	session[:likedpairs] = []
 	# p array
 	# p array.class
 	# p array.length
-	# p "#{namearray}"
+	p "#{session[:namearray]}"
 
 	redirect "/results?first_name="+ first_name
 end
 
 get '/results' do
 	first_name = params[:first_name]
-	erb :page_3_results, locals:{first_name: first_name}
+	erb :page_3_results, locals:{first_name: first_name, pairsarray: session[:namearray]}
 end
 
 post '/checkname' do
   first_name = params[:first_name]
 	session[:pairs] = params[:teams]
- 	p "this should be the picked pairs #{session[:pairs]}"
+ 	# p "this should be the picked pairs #{session[:pairs]}"
 
 #notes from aarons's instruction from group project: If you remember from today, we had to .join(',') each element in the array so the formatting of the array was the same.
 #This little routine does that permanently
 #It iterates through session[:namearray] and .joins each element, pushes those elements into a temporary array,
 #and then makes session[:namearray] equal to the temporary array...essentially "joining" each element in sessioin[:namearray]
-	# p "this should be the pairs #{session[:pairs]}"
+	p "this should be the chosen pairs #{session[:pairs]}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	p "original pairs from function#{session[:namearray]}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	temp_array = []
  		session[:namearray].each do |name|
 			temp_array.push(name.join(','))
 	end
+	p "this is temp array #{temp_array}"
 	session[:namearray] = temp_array
 
 	# aaron notes again: This section is from today.
@@ -99,11 +103,18 @@ post '/checkname' do
 
 #This solution works perfectly.  However, when we tried it today, we were having trouble with the formatting of the arrays.
 #The formatting of session[:namearray] and session[:pairs] was just a little different, which caused them not to match when we compared them.
-
+# p "this is Keepers #{session[:keepers]}**"
 			leftovers = []
+			p "#{session[:namearray]}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 			session[:namearray].each do |pairs|
+
+				# pairs = pairs.join(",")
+				# p "these are my pairs of name array #{pairs}"
+				# p "these are the keepers!!!!!!!!!!!!!!!!!!!!!#{session[:pairs]
+				# }"
 				if session[:pairs].include?(pairs) == false
-					leftovers << pairs.split(',')
+					 leftovers << pairs.split(',')
+
 				else
 					session[:likedpairs] <<pairs.split(',')
 				end
@@ -130,6 +141,13 @@ get "/finalresults" do
  erb :page_4_finalresult, locals:{first_name: first_name, pairs: session[:likedpairs]}
 end
 
+
+
+
 post '/startover' do
 	redirect '/'
+end
+
+get '/contactme' do
+  erb :contact
 end

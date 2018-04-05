@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+<style>
+body {
+  font-family: myfont;
+  color: ccec6d;
+  text-align: center;
+  font-size: 60px;
+  color: black;
+  text-shadow: 0 0 8px white;
+}
+
+
+</style>
 </head>
+<body
+></center>
 <%=first_name%>
 <script>
   function new_textbox(){
@@ -21,15 +34,10 @@
 }
 </script>
 <button onclick="new_textbox()">Add a name :)</button>
-<button onclick="remove_box()">Delete your box</button> // removes last child at location
+<button onclick="remove_box()">Delete your box</button>
 <form method = "post" action ="/getrandomnames">
   <p id="our_input"> </p>
-  First name:<input type = "text" name= "name1">
-  second name:<input type = "text" name= "name2">
-  third name:<input type = "text" name= "name3">
-  fourth name:<input type = "text" name= "name4">
-  fifth name:<input type = "text" name= "name5">
-  sixth name:<input type = "text" name= "name6">
+
   <input type = "hidden" name= "first_name" value="<%=first_name%>">
-  <input type="submit" value="makenamelist">
-</form>
+  <input type="submit" value="makenamelist"></center>
+</form></body>

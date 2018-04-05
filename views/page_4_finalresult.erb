@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html
-  <head>
+<html>
+  <head><style>
+    h2 {
+      font-family: "myfont";
 
-    <title></title>
-  </head>
-  <body><body background="stage.jpg">
-    <center><h2><%=first_name%> Here are your teams</h2>
+  }
+  body {
+    font-family: myfont;
+    color: ccec6d;
+    text-align: center;
+    font-size: 60px;
+    color: black;
+    text-shadow: 0 0 8px white;
+  }
+
+  </style></head>
+  <body>
+    <h2><%=first_name%> Here are your teams</h2>
+     <p><center>
     <%session[:likedpairs].each do |final|%></br>
     <%=final.join(',')%>
     <%end%></center>
@@ -15,5 +27,5 @@
 
 <center><img src="/danjou-pear-cartoon.png" alt="snapping pear" width="460" height="345"></center>
 
-  </body>
+</p></body>
 </html>

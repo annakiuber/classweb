@@ -2,18 +2,40 @@
 
 <html>
 <head>
-  <title></title>
+  <style>
+  p {
+    font-family: myfont;
+    color: ccec6d;
+    text-align: center;
+    font-size: 100px;
+    color: black;
+    text-shadow: 0 0 8px white;
+}
+
+body {
+  font-family: myfont;
+  color: ccec6d;
+  text-align: center;
+  font-size: 60px;
+  color: black;
+  text-shadow: 0 0 8px white;
+}
+
+
+</style>
 </head>
+<body>
+<center><p>please choose the pairs you are happy with </p></center></br>
 
 
-<form method= "post" action ="checkname">
+<
+<center><form method= "post" action ="checkname">
 <input type = "hidden" name= "first_name" value="<%=first_name%>">
-
-  <%session[:namearray].each do |pairs| %>
-<input type = "checkbox" name = "teams[]" value ='<%=pairs.join(',')%>'>
-    <%=pairs.join(',')%><br>
-  <%end%>
-  <input type="submit" value="next">
+<%pairsarray.each do |pairs| %>
+<input type = "checkbox" name = "teams[]" value ='<%=pairs.join(",")%>'>
+  <%=pairs.join(',')%>
+<%end%>
+  <input type="submit" value="next"></center>
 
 </body>
 </html>
